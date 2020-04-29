@@ -1,5 +1,3 @@
 # NeuroX
 
 ## Line
-# Line
-### Line
