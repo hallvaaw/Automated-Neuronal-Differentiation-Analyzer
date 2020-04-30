@@ -30,7 +30,7 @@ Make a new directory "work_dir" and place all the code files here.
 
 Sort all images in one directory with subdirectories for every image location. The naming convention is {prefix}\_{well}_\{image tile} (see fig. 1).
 
-![alt text](https://github.com/hallvaaw/NeuroX/blob/master/mappestruktur.jpeg)
+![image](https://github.com/hallvaaw/NeuroX/blob/master/dir_structure.jpeg)
 
 See figure 2 for the standard naming convention of IncuCyte image files.
 
