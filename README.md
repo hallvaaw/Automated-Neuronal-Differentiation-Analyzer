@@ -49,7 +49,7 @@ If you want to add a new cell line, but do not have the parameters, close the wi
 In the next window set the analysis parameters by filling out the required information.
 * Choose the main directory containing all the subdirectories as image directory.
 * Choose the first image in the first subdirectory as reference image
-* Select the full path to the ImageJ program. Usually this is /home/<>/Fiji.app/
+* Select the full path to the ImageJ program. Usually this is /home/.../Fiji.app/
 * Select analysis metrics, operative system, wells to be analysed and cell line.
 * Select if you want to register images or not.
 
@@ -64,3 +64,19 @@ When the analysis has finished, the results are stored in csv files named "resul
 If you want to remove all the empty folders that are left after analysis, run this command from the command line in the image folder:  "find -type d -empty -delete".
 #### Caution:
 This command will remove all empty directiories. Make sure that you are running it at the right place.
+
+
+## Finding new cell parameters
+
+If you want to add a new cell line, but do not have the parameters required for the particle analysis, use can use the appendix script to find them.
+
+### How to use
+
+1. In Fiji, open the appendix script by File -> Open... or press "Ctrl+o"
+2. Press "Run" and select an image with the cell line.
+3. Select the thresholding algorithm you want to test, or choose "NO THRESHOLD" if the image is already segmented i.e with Trainable Weka segmentaion.
+4. Select the minimum and maximum particle size in number of pixels. Use a narrow range as possible.
+5. Select the minimum and maximum circularity of the particles. A perfect circle has circularity equal to 1.00, whereas the least circular shape has circularity equal to 0.00. Try for instance a range from 0.40-1.00 for cell bodies and 0.00-0.40 for neurites to begin with.
+6. Choose the folder where you want the outlines to be saved and press "OK".
+7. The script will now run particle analysis with the ranges set and save the outlines in a folder. The names of the files shows the parameters as such: {treshold}\_{minimum particle size + step *n*}\_{maximum particle size}\_{minimum circularity + step *m*}_{maximum circularity}.tif
+8. Use the outlines to compare to the original image. Set a new and more precise range until you have found the parameters that makes the best outline.
