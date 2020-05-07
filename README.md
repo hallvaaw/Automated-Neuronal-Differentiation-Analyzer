@@ -28,7 +28,7 @@ Make a new directory "work_dir" and place all the code files here.
 
 ### Image directory structure
 
-Sort all images in one directory with subdirectories for every image location. The naming convention is {prefix}\_{well}_\{image tile} (see fig. 1).
+Sort all images in one head directory (i.e "experiment_1_images") with subdirectories for every well and image tile. The naming convention is {prefix}\_{well}_\{image tile} (see fig. 1).
 
 ![image](https://github.com/hallvaaw/NeuroX/blob/master/dir_structure.jpg "directory structure")
 *Figure 1: Directory structure of the image files.*
@@ -58,9 +58,11 @@ In the next window set the analysis parameters by filling out the required infor
 
 ## Running the analysis
 
-The tool will now run through all selected well and apply the analysis metric you chose. Depending on the system you are running on, and the number of images you are analysing this will take a while. To abort press "Ctrl+C".
+The tool will now run through all selected well and apply the analysis metric(s) you chose. Depending on the system you are running on, and the number of images you are analysing this will take a while. To abort press "Ctrl+C".
 
 When the analysis has finished, the results are stored in csv files named "results_{metric}.csv" in the same directory as the image subfolders.
+Note that there are also csv files stored in the directories with names ending with "results". These csv files contain unsummarized data on every identified particle in every image.
+If you chose to register the images, the transform files are saved in the directories with names ending with "transform".
 
 ### Removing empty folders
 
