@@ -30,7 +30,7 @@ Make a new directory "work_dir" and place all the code files here.
 
 Sort all images in one head directory (i.e "experiment_1_images") with subdirectories for every well and image tile. The naming convention is {prefix}\_{well}_\{image tile} (see fig. 1).
 
-![image](https://github.com/hallvaaw/NeuroX/blob/master/dir_structure.jpg "directory structure")
+![image](https://github.com/hallvaaw/NeuroX/blob/master/dir_structure.jpg "directory structure")  
 *Figure 1: Directory structure of the image files.*
 
 See figure 2 for the standard naming convention of IncuCyte image files. Use this to set the correct prefix, well etc.
@@ -94,9 +94,9 @@ PS: type in integers from 0-100 (see fig ), not decimal numbers!
 8. Use the outlines to compare to the original image. Set a new and more precise range until you have found the parameters that makes the best outline.
 
 ![image](https://github.com/hallvaaw/NeuroX/blob/master/find_params_gui.jpg "Find parameters")
-*Figure :Graphical user interface for testing and determining cell line parameters.*
-![image](https://github.com/hallvaaw/NeuroX/blob/master/find_params_gui.jpg "Change to set constant minimum particle size and circularity")
-*Figure : Script for finding cell line parameters. Change line 23 and 24 to integer values for constant lower particle size and circularity, respectively. Use if you for instance have found cell size, but want to determine cell circularity.*
+*Figure 4:Graphical user interface for testing and determining cell line parameters.*
+![image](https://github.com/hallvaaw/NeuroX/blob/master/find_params_script.jpg "Change to set constant minimum particle size and circularity")
+*Figure 5: Script for finding cell line parameters. Change line 23 and 24 to integer values for constant lower particle size and circularity, respectively. Use if you for instance have found cell size, but want to determine cell circularity.*
 
 
 ### Citing
