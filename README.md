@@ -35,6 +35,7 @@ Sort all images in one head directory (i.e "experiment_1_images") with subdirect
 
 See figure 2 for the standard naming convention of IncuCyte image files. Use this to set the correct prefix, well etc.
 
+![image](https://github.com/hallvaaw/NeuroX/blob/master/file_name_parts.jpg "file name")
 *Figure 2: Standard naming convention for naming IncuCyte files.*
 
 ## Starting the tool
@@ -58,7 +59,7 @@ In the next window set the analysis parameters by filling out the required infor
 
 ## Running the analysis
 
-The tool will now run through all selected well and apply the analysis metric(s) you chose. Depending on the system you are running on, and the number of images you are analysing this will take a while. To abort press "Ctrl+C".
+The tool will now run through all selected wells and apply the analysis metric(s) you chose. Depending on the system you are running on, and the number of images you are analysing this will take a while. To abort press "Ctrl+C".
 
 When the analysis has finished, the results are stored in csv files named "results_{metric}.csv" in the same directory as the image subfolders.
 Note that there are also csv files stored in the directories with names ending with "results". These csv files contain unsummarized data on every identified particle in every image.
@@ -89,5 +90,19 @@ PS: type in integers from 0-100 (see fig ), not decimal numbers!
 
 ![image](https://github.com/hallvaaw/NeuroX/blob/master/find_params_gui.jpg "Find parameters")
 *Figure :Graphical user interface for testing and determining cell line parameters.*
-![image](https://github.com/hallvaaw/NeuroX/blob/master/find_params_gui.jpg "Change for constant minimum particle size and circularity")
+![image](https://github.com/hallvaaw/NeuroX/blob/master/find_params_gui.jpg "Change to set constant minimum particle size and circularity")
 *Figure : Script for finding cell line parameters. Change line 23 and 24 to integer values for constant lower particle size and circularity, respectively. Use if you for instance have found cell size, but want to determine cell circularity.*
+
+
+### Citing
+
+Note that NeuroX is part of a publication. Please cite this if you use NeuroX as part of your paper.
+
+### Glossary
+
+Tile
+Jython
+Metric
+Threshold
+Trainable Weka segmentation
+Circularity
