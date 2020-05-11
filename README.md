@@ -21,7 +21,7 @@ All necessary Python packages can be installed when installing [Anaconda](https:
 
 ## How to use
 
-Before using NeuroX, be sure to have back up of all images.
+Before using NeuroX, be sure to have back up of all images. Also ensure that you have enough space to run the analysis as the analysis creates output files that require some space. At least twice the space used by the images should be available.
 
 Make a new directory "work_dir" and place all the code files here.
 
@@ -40,23 +40,28 @@ See figure 2 for the standard naming convention of IncuCyte image files. Use thi
 
 ## Starting the tool
 
-In "work_dir" start the Bash script by typing "bash NeuroX.sh" or "./ NeuroX.sh" and hit Enter.
+From the terminal and while in "work_dir", start the Bash script by typing "bash NeuroX.sh" or "./ NeuroX.sh" and hit Enter.
 
 #### Adding new cell line
 
 Upon starting the tool, you are presented a window were you can add parameters for a new cell line. Add the new parameters and hit "Submit and Continue".
 If you are not going to add a new cell line, hit "If no, press this button to continue".
-If you want to add a new cell line, but do not have the parameters, close the window and see section XXXXX.
+If you want to add a new cell line, but do not have the parameters, close the window and see section "Finding new cell parameters".
 
 #### Setting the analysis parameters
 
-In the next window set the analysis parameters by filling out the required information.
+In the next window set the analysis parameters by filling out the required information (fig.).
 * Choose the main directory containing all the subdirectories as image directory.
-* Choose the first image in the first subdirectory as reference image
+* Choose the first image in the first subdirectory as reference image.
 * Select the full path to the ImageJ program. Usually this is /home/.../Fiji.app/
+* Set neurite aspect ratio threshold for exclusion of false positive neurites. Set this value to zero if you want to include every identified object.
 * Select analysis metrics, operative system, wells to be analysed and cell line.
+* Select if you want to save object outlines or not. Note that if you choose to do so, object outlines will be saved in directories with the suffix "_{cells/neurites/branching}".
 * Select if you want to register images or not.
+* Start the analysis by pressing "Submit and continue".
 
+![image](https://github.com/hallvaaw/NeuroX/blob/master/main_gui.jpg "Graphical user interface")
+*Figure 3: TkInter graphical user interface for selecting parameters for image analysis.*
 ## Running the analysis
 
 The tool will now run through all selected wells and apply the analysis metric(s) you chose. Depending on the system you are running on, and the number of images you are analysing this will take a while. To abort press "Ctrl+C".
@@ -74,13 +79,13 @@ This command will remove all empty directiories. Make sure that you are running 
 
 ## Finding new cell parameters
 
-If you want to add a new cell line, but do not have the parameters required for the particle analysis, use can use the appendix script to find them.
+If you want to add a new cell line, but do not have the parameters required for the particle analysis, you can use the appendix script to find them.
 
 ### How to use
 
-1. In Fiji, open the appendix script by File -> Open... or press "Ctrl+o"
+1. In Fiji, open the appendix script by File -> Open... or press "Ctrl+O"
 2. Press "Run" and select an image with the cell line.
-3. Select the thresholding algorithm you want to test, or choose "NO THRESHOLD" if the image is already segmented i.e with Trainable Weka segmentaion.
+3. Select the thresholding algorithm you want to test, or choose "NO THRESHOLD" if the image is already segmented i.e with [Trainable Weka segmentation.](https://imagej.net/Trainable_Weka_Segmentation)
 4. Select the minimum and maximum particle size in number of pixels. Use a narrow range as possible. Set constant minimum and maximum values by changing line 23 and 24 in the script (see fig).
 5. Select the minimum and maximum circularity of the particles. A perfect circle has circularity equal to 1.00, whereas the least circular shape has circularity equal to 0.00. Try for instance a range from 0.40-1.00 for cell bodies and 0.00-0.40 for neurites to begin with.
 PS: type in integers from 0-100 (see fig ), not decimal numbers!
@@ -97,12 +102,3 @@ PS: type in integers from 0-100 (see fig ), not decimal numbers!
 ### Citing
 
 Note that NeuroX is part of a publication. Please cite this if you use NeuroX as part of your paper.
-
-### Glossary
-
-Tile
-Jython
-Metric
-Threshold
-Trainable Weka segmentation
-Circularity
