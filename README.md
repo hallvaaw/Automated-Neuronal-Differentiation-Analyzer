@@ -2,7 +2,7 @@
 
 Automated Neuronal Differentiation Analyzer (ANDA) is an image analysis tool used for analysis of microscopy images from 2d neuronal cell cultures. The pipeline is a series of Python and Jython scripts executed in succession by a Bash script. Important metrics in neurodevelopment such as cell body count, neurite lengths and neurite branching points are retrieved from images and analysed using [Fiji](https://imagej.net/Fiji/Downloads).
 
-![image](https://github.com/hallvaaw/NeuroX/blob/master//front_page_pics/header.png "ANDA")
+![image](https://github.com/hallvaaw/NeuroX/blob/master//front_page_pics/header_png.png "ANDA")
 
 ## Installing
 
@@ -30,11 +30,12 @@ Make a new directory "work_dir" and place all the code files here.
 
 ### Image directory structure
 
-Sort all images in one head directory (i.e "experiment_1_images") with subdirectories for every well and image tile. The naming convention is {prefix}\_{well}_\{image tile} (see fig. 1).
+Sort all images in one head directory (i.e "experiment_1_images") with subdirectories for every well and image tile. The naming convention is {prefix}\_{well}_\{image tile} (see figure 1).
 
 
 
 ![image](https://github.com/hallvaaw/NeuroX/blob/master//front_page_pics/dir_structure.jpg "directory structure")
+
 *Figure 1: Directory structure of the image files.*
 
 
@@ -48,15 +49,15 @@ See figure 2 for the standard naming convention of IncuCyte image files. Use thi
 
 From the terminal and while in "work_dir", start the Bash script by typing "bash ANDA.sh" or "./ ANDA.sh" and hit Enter.
 
-#### Adding new cell line
+### Adding new cell line
 
 Upon starting ANDA, you are presented a window were you can add parameters for a new cell line. Add the new parameters and hit "Submit and Continue".
 If you are not going to add a new cell line, hit "If no, press this button to continue".
 If you want to add a new cell line, but do not have the parameters, close the window and see section "Finding new cell parameters".
 
-#### Setting the analysis parameters
+### Setting the analysis parameters
 
-In the next window set the analysis parameters by filling out the required information (fig.).
+In the next window set the analysis parameters by filling out the required information (figure 3).
 * Choose the main directory containing all the subdirectories as image directory.
 * Choose the first image in the first subdirectory as reference image.
 * Select the full path to the ImageJ program. Usually this is /home/.../Fiji.app/
@@ -65,6 +66,9 @@ In the next window set the analysis parameters by filling out the required infor
 * Select if you want to save object outlines or not. Note that if you choose to do so, object outlines will be saved in directories with the suffix "_{cells/neurites/branching}".
 * Select if you want to register images or not.
 * Start the analysis by pressing "Submit and continue".
+
+#### To register images or not
+Image registration uses the Fiji plugin "Register Virtual Stack Slices" to geometrically align and stack the images. However, how well the registration goes depends a lot on the quality of the data, with low quality data running the risk of throwing errors or yield badly registered images. A successful registration gives a stack of stabilized images which are easier to process or crop. However it makes no difference for the image analysis itself whether the images are registered or not. If you want stabilized time series of your data, choose registration but beware that this will take considerably longer time to run. The registered images are saved in folders with suffix "output".
 
 ![image](https://github.com/hallvaaw/NeuroX/blob/master//front_page_pics/main_gui.jpg "Graphical user interface")
 *Figure 3: TkInter graphical user interface for selecting parameters for image analysis.*
@@ -92,9 +96,9 @@ If you want to add a new cell line, but do not have the parameters required for 
 1. In Fiji, open the appendix script by File -> Open... or press "Ctrl+O"
 2. Press "Run" and select an image with the cell line.
 3. Select the thresholding algorithm you want to test, or choose "NO THRESHOLD" if the image is already segmented i.e with [Trainable Weka segmentation.](https://imagej.net/Trainable_Weka_Segmentation)
-4. Select the minimum and maximum particle size in number of pixels. Use a narrow range as possible. Set constant minimum and maximum values by changing line 23 and 24 in the script (see fig).
+4. Select the minimum and maximum particle size in number of pixels. Use a narrow range as possible. Set constant minimum and maximum values by changing line 23 and 24 in the script (see figure 5).
 5. Select the minimum and maximum circularity of the particles. A perfect circle has circularity equal to 1.00, whereas the least circular shape has circularity equal to 0.00. Try for instance a range from 0.40-1.00 for cell bodies and 0.00-0.40 for neurites to begin with.
-PS: type in integers from 0-100 (see fig ), not decimal numbers!
+PS: type in integers from 0-100 (see figure 4), not decimal numbers!
 6. Choose the folder where you want the outlines to be saved and press "OK".
 7. The script will now run particle analysis with the ranges set and save the outlines in a folder. The names of the files shows the parameters as such: {treshold}\_{minimum particle size + step *n*}\_{maximum particle size}\_{minimum circularity + step *m*}_{maximum circularity}.tif
 8. Use the outlines to compare to the original image. Set a new and more precise range until you have found the parameters that makes the best outline.
@@ -105,6 +109,6 @@ PS: type in integers from 0-100 (see fig ), not decimal numbers!
 *Figure 5: Script for finding cell line parameters. Change line 23 and 24 to integer values for constant lower particle size and circularity, respectively. Use if you for instance have found cell size, but want to determine cell circularity.*
 
 
-### Citing
+## Citing
 
 Note that Automated Neuronal Differentiation Analyzer is part of a publication. Please cite this if you use Automated Neuronal Differentiation Analyzer as part of your paper.
