@@ -1,6 +1,8 @@
-# NeuroX
+# Automated Neuronal Differentiation Analyzer
 
-NeuroX is an image analysis tool used for analysis of microscopy images from 2d neuronal cell cultures. The pipeline is a series of Python and Jython scripts executed in succession by a Bash script. Important metrics in neurodevelopment such as cell body count, neurite lengths and neurite branching points are retrieved from images and analysed using [Fiji](https://imagej.net/Fiji/Downloads).
+Automated Neuronal Differentiation Analyzer (ANDA) is an image analysis tool used for analysis of microscopy images from 2d neuronal cell cultures. The pipeline is a series of Python and Jython scripts executed in succession by a Bash script. Important metrics in neurodevelopment such as cell body count, neurite lengths and neurite branching points are retrieved from images and analysed using [Fiji](https://imagej.net/Fiji/Downloads).
+
+![image](https://github.com/hallvaaw/NeuroX/blob/master//front_page_pics/header.png "ANDA")
 
 ## Installing
 
@@ -21,7 +23,7 @@ All necessary Python packages can be installed when installing [Anaconda](https:
 
 ## How to use
 
-Before using NeuroX, be sure to have back up of all images. Also ensure that you have enough space to run the analysis as the analysis creates output files that require some space. At least twice the space used by the images should be available.
+Before using ANDA, be sure to have back up of all images. Also ensure that you have enough space to run the analysis as the analysis creates output files that require some space. At least twice the space used by the images should be available.
 
 Make a new directory "work_dir" and place all the code files here.
 
@@ -30,21 +32,25 @@ Make a new directory "work_dir" and place all the code files here.
 
 Sort all images in one head directory (i.e "experiment_1_images") with subdirectories for every well and image tile. The naming convention is {prefix}\_{well}_\{image tile} (see fig. 1).
 
-![image](https://github.com/hallvaaw/NeuroX/blob/master/dir_structure.jpg "directory structure")  
+
+
+![image](https://github.com/hallvaaw/NeuroX/blob/master//front_page_pics/dir_structure.jpg "directory structure")
 *Figure 1: Directory structure of the image files.*
+
+
 
 See figure 2 for the standard naming convention of IncuCyte image files. Use this to set the correct prefix, well etc.
 
-![image](https://github.com/hallvaaw/NeuroX/blob/master/file_name_parts.jpg "file name")
+![image](https://github.com/hallvaaw/NeuroX/blob/master//front_page_pics/file_name_parts.jpg "file name")
 *Figure 2: Standard naming convention for naming IncuCyte files.*
 
 ## Starting the tool
 
-From the terminal and while in "work_dir", start the Bash script by typing "bash NeuroX.sh" or "./ NeuroX.sh" and hit Enter.
+From the terminal and while in "work_dir", start the Bash script by typing "bash ANDA.sh" or "./ ANDA.sh" and hit Enter.
 
 #### Adding new cell line
 
-Upon starting the tool, you are presented a window were you can add parameters for a new cell line. Add the new parameters and hit "Submit and Continue".
+Upon starting ANDA, you are presented a window were you can add parameters for a new cell line. Add the new parameters and hit "Submit and Continue".
 If you are not going to add a new cell line, hit "If no, press this button to continue".
 If you want to add a new cell line, but do not have the parameters, close the window and see section "Finding new cell parameters".
 
@@ -60,7 +66,7 @@ In the next window set the analysis parameters by filling out the required infor
 * Select if you want to register images or not.
 * Start the analysis by pressing "Submit and continue".
 
-![image](https://github.com/hallvaaw/NeuroX/blob/master/main_gui.jpg "Graphical user interface")
+![image](https://github.com/hallvaaw/NeuroX/blob/master//front_page_pics/main_gui.jpg "Graphical user interface")
 *Figure 3: TkInter graphical user interface for selecting parameters for image analysis.*
 ## Running the analysis
 
@@ -93,12 +99,12 @@ PS: type in integers from 0-100 (see fig ), not decimal numbers!
 7. The script will now run particle analysis with the ranges set and save the outlines in a folder. The names of the files shows the parameters as such: {treshold}\_{minimum particle size + step *n*}\_{maximum particle size}\_{minimum circularity + step *m*}_{maximum circularity}.tif
 8. Use the outlines to compare to the original image. Set a new and more precise range until you have found the parameters that makes the best outline.
 
-![image](https://github.com/hallvaaw/NeuroX/blob/master/find_params_gui.jpg "Find parameters")
+![image](https://github.com/hallvaaw/NeuroX/blob/master/front_page_pics/find_params_gui.jpg "Find parameters")
 *Figure 4:Graphical user interface for testing and determining cell line parameters.*
-![image](https://github.com/hallvaaw/NeuroX/blob/master/find_params_script.jpg "Change to set constant minimum particle size and circularity")
+![image](https://github.com/hallvaaw/NeuroX/blob/master/front_page_pics/find_params_script.jpg "Change to set constant minimum particle size and circularity")
 *Figure 5: Script for finding cell line parameters. Change line 23 and 24 to integer values for constant lower particle size and circularity, respectively. Use if you for instance have found cell size, but want to determine cell circularity.*
 
 
 ### Citing
 
-Note that NeuroX is part of a publication. Please cite this if you use NeuroX as part of your paper.
+Note that Automated Neuronal Differentiation Analyzer is part of a publication. Please cite this if you use Automated Neuronal Differentiation Analyzer as part of your paper.
