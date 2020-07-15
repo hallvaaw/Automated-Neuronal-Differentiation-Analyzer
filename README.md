@@ -109,6 +109,4 @@ PS: type in integers from 0-100 (see figure 4), not decimal numbers!
 *Figure 5: Script for finding cell line parameters. Change line 23 and 24 to integer values for constant lower particle size and circularity, respectively. Use if you for instance have found cell size, but want to determine cell circularity.*
 
 
-## Citing
 
-Note that Automated Neuronal Differentiation Analyzer is part of a publication. Please cite this if you use Automated Neuronal Differentiation Analyzer as part of your paper.
