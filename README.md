@@ -103,7 +103,7 @@ PS: type in integers from 0-100 (see figure 4), not decimal numbers!
 7. The script will now run particle analysis with the ranges set and save the outlines in a folder. The names of the files shows the parameters as such: {treshold}\_{minimum particle size + step *n*}\_{maximum particle size}\_{minimum circularity + step *m*}_{maximum circularity}.tif
 8. Use the outlines to compare to the original image. Set a new and more precise range until you have found the parameters that makes the best outline.
 
-![image](https://github.com/hallvaaw/NeuroX/blob/master/front_page_pics/find_params_gui.jpg "Find parameters")
+![image](https://github.com/hallvaaw/NeuroX/blob/master/front_page_pics/find_params_gui.jpg "Find parameters")  
 *Figure 4:Graphical user interface for testing and determining cell line parameters.*
 ![image](https://github.com/hallvaaw/NeuroX/blob/master/front_page_pics/find_params_script.jpg "Change to set constant minimum particle size and circularity")
 *Figure 5: Script for finding cell line parameters. Change line 23 and 24 to integer values for constant lower particle size and circularity, respectively. Use if you for instance have found cell size, but want to determine cell circularity.*
