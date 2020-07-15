@@ -42,7 +42,7 @@ Sort all images in one head directory (i.e "experiment_1_images") with subdirect
 
 See figure 2 for the standard naming convention of IncuCyte image files. Use this to set the correct prefix, well etc.
 
-![image](https://github.com/hallvaaw/NeuroX/blob/master//front_page_pics/file_name_parts.jpg "file name")
+![image](https://github.com/hallvaaw/NeuroX/blob/master//front_page_pics/file_name_parts.jpg "file name")  
 *Figure 2: Standard naming convention for naming IncuCyte files.*
 
 ## Starting the tool
